@@ -1,23 +1,23 @@
-const audio = document.querySelector('audio')
-const wrapper = document.querySelector('.scene')
-const btnAudio = document.querySelector('#btn-audio')
-const btnRestart = document.querySelector('#btn-restart')
 
-btnRestart.addEventListener('click', () => {
-  wrapper.style.display = 'none'
-  setTimeout(() => {
-    wrapper.style.display = 'block'
-    audio.currentTime = 0
-    audio.play()
-  }, 20)
-})
 
-btnAudio.addEventListener('click', () => {
-  const elClass = 'controls__btn--toggled'
-  btnAudio.classList.remove(elClass)
-  audio.muted = !audio.muted
 
-  if (audio.muted) {
-    btnAudio.classList.add(elClass)
-  }
-})
+
+function reveal(){
+
+  document.querySelector(".flexcenter").style.display = 'none'
+  const audio = document.querySelector('audio')
+  const wrapper = document.querySelector('.scene')
+  const btnAudio = document.querySelector('#btn-audio')
+  const btnRestart = document.querySelector('#btn-restart')
+
+  audio.currentTime = 0;
+  audio.play();
+
+  const template = document.querySelector('template');
+
+  const copy = template.content.cloneNode(true);
+
+  document.body.append(copy)
+
+  
+}
